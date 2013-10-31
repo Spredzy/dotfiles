@@ -1,0 +1,4 @@
+dotfiles
+========
+
+Applications configuration files
