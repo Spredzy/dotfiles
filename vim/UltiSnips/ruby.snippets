@@ -1,0 +1,31 @@
+snippet ctx "Context" !b
+context '$1' do
+
+end
+endsnippet
+
+snippet spec "A Puppet spec case" b
+require 'spec_helper'
+
+describe '${1:myclass}' do
+
+end
+endsnippet
+
+snippet it "A Unit test" b
+it '$1' do
+
+end
+endsnippet
+
+snippet itic "it includes class" b
+it 'includes class $1' do
+	should include_class('$1')
+end
+endsnippet
+
+snippet itcc "it contain class" b
+it 'contains class $1' do
+	should contain_class('$1')
+end
+endsnippet

@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/yguenane/.vim'
+let g:netrw_dirhist_2='/home/yguenane/.vim/bundle'
+let g:netrw_dirhist_3='/home/yguenane/Projects/saiku/saiku-core/saiku-service/src/main/java/org/saiku/service/olap'
+let g:netrw_dirhist_4='/home/yguenane/Projects/augeas-upstream/lenses'
+let g:netrw_dirhist_5='/home/yguenane/Projects/augeas/lenses/tests'
+let g:netrw_dirhist_6='/tmp/useractivityreport/xaction'
