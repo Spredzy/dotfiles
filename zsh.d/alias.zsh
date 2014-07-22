@@ -17,6 +17,18 @@ alias tn='tmux new -s '
 alias ta='tmux attach -t '
 alias tk='tmux kill-session -t '
 
+# Vagrant Cheats
+#
+#
+alias vup="vagrant up"
+alias vde="vagrant destroyf -f"
+alias vh="vagrant halt"
+alias vs="vagrant suspend"
+alias vr="vagrant resume"
+alias vrld="vagrant reload"
+alias vssh="vagrant ssh"
+alias vstat="vagrant status"
+
 # Global Aliases
 #
 #
