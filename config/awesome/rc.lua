@@ -349,6 +349,9 @@ globalkeys = awful.util.table.join(
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
               end),
+
+    awful.key({ }, "XF86MonBrightnessUp", function() awful.util.spawn("xbacklight -inc 10") end),
+    awful.key({ }, "XF86MonBrightnessDown", function() awful.util.spawn("xbacklight -dec 10") end),
     awful.key({ }, "XF86ScreenSaver", function() awful.util.spawn("slock") end),
     awful.key({ }, "XF86AudioMicMute", function() awful.util.spawn("amixer set Capture toggle") end),
     awful.key({ }, "XF86AudioRaiseVolume", function()
