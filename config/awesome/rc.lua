@@ -14,6 +14,7 @@ local vicious = require("vicious")
 
 --
 -- require("volume")
+local battery = require("battery")
 
 
 
@@ -267,11 +268,15 @@ for s = 1, screen.count() do
     left_layout:add(mypromptbox[s])
 
     -- Widgets that are aligned to the right
+    --
+    batterywidget = wibox.widget.textbox()
     local right_layout = wibox.layout.fixed.horizontal()
+    right_layout:add(batterywidget)
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(alsawidget.bar)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
+    batterywidget:set_text(batteryInfo("BAT0"))
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
@@ -543,4 +548,10 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+batterywidget_timer = timer({timeout = 1})
+batterywidget_timer:connect_signal("timeout", function()
+  batterywidget:set_text(batteryInfo("BAT0"))
+end)
+batterywidget_timer:start()
 -- }}}
