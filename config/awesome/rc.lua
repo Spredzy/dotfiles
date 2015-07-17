@@ -16,6 +16,10 @@ local vicious = require("vicious")
 -- require("volume")
 local battery = require("battery")
 
+-- package.path = package.path .. ';/usr/share/powerline/awesome/powerline.lua'
+-- package.path = '/usr/share/powerline/awesome/powerline.lua'
+-- require("powerline")
+
 
 
 -- {{{ Error handling
@@ -273,6 +277,7 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     right_layout:add(batterywidget)
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    -- right_layout:add(powerline_widget)
     right_layout:add(alsawidget.bar)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
@@ -549,7 +554,7 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
-batterywidget_timer = timer({timeout = 1})
+batterywidget_timer = timer({timeout = 30})
 batterywidget_timer:connect_signal("timeout", function()
   batterywidget:set_text(batteryInfo("BAT0"))
 end)
