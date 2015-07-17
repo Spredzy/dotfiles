@@ -7,7 +7,7 @@
 
 setopt promptsubst
 
-. ~/.zshrc.d/lib/zsh-git-prompt/zshrc.sh
+. ~/.zsh.d/lib/zsh-git-prompt/zshrc.sh
 
 local color_81="%{$FG[081]%}"
 local color_221="%{$FG[221]%}"
